@@ -1,65 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure Test Website</title>
+    <title>Cloud Web Test - Vercel Edition</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #0078D4, #00B4FF);
-            color: white;
-            text-align: center;
-            padding-top: 100px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at top left, #0f172a, #1e293b, #0f172a);
+            color: #f8fafc;
+            padding: 20px;
+            overflow-x: hidden;
         }
+
+        /* Glassmorphism Card Container */
         .card {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        h1 {
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 18px;
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: white;
-            color: #0078D4;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: #f0f0f0;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>🚀 Azure Web Test</h1>
-        <p>Website ini berhasil berjalan di Microsoft Azure!</p>
-        <p id="time"></p>
-        <button class="btn" onclick="showMessage()">Klik Saya</button>
-    </div>
-
-    <script>
-        function showMessage() {
-            alert("Halo! Website kamu sudah berhasil berjalan di Azure 🎉");
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            padding: 40px 30px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+                        0 0 40px rgba(56, 189, 248, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        function updateTime() {
-            const now = new Date();
-            document.getElementById("time").innerText = "Waktu sekarang: " + now.toLocaleString();
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5),
+                        0 0 50px rgba(56, 189, 248, 0.2);
         }
 
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
-</body>
-</html>
+        /* Status Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .badge-dot {
